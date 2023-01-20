@@ -19,7 +19,7 @@
 ////////////////////////
 //   ARROW FUNCTION   //
 ///////////////////////
-const createAdder = x => inner = y => x+y 
+const createAdder = x => y => x+y 
 
 
 
@@ -71,16 +71,16 @@ function getMovieInfo(movieName){
 async function printMovieInfo(movieName){
     try{
         let movie = await getMovieInfo(movieName);
-        console.log(`${movie.title}, directed by the one and only ${movie.director}. An action packed film of ${movie.description} with a run time of ${movie.runtime} minutes`)
+        console.log(`${movie.title}, directed by the one and only ${movie.director}. An action packed film of ${movie.description} with a run time of ${movie.runtime} minutes`);
     } catch(err) {
-        console.warn(`${movieName} cannot be accessed because it is too short.`)
+        console.warn(err);
     }
 }
 
 // Example 1
-// console.log(printMovieInfo('Indiana Jones and the Dark Knight'))
+console.log(printMovieInfo('Indiana Jones and the Dark Knight'))
 // Output: Indiana Jones and the Dark Knight directed by Christopher Spielberg. A story of Good vs Evil that runs for 157 minutes.
 
 // Example 2
-console.log(printMovieInfo('ET'))
+// console.log(printMovieInfo('ET'))
 // Output: *Warning* ET cannot be accessed because it it too short
